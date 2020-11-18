@@ -1,0 +1,67 @@
+<html>
+<head>
+<script language="javascript">
+var msg = " Sniped's Website ";
+var pos = 0;
+var spacer = " -- ";
+var time_length = 100;
+function ScrollTitle()
+{
+ document.title = msg.substring(pos, msg.length) + spacer + msg.substring(0, pos);
+ pos++;
+ if (pos > msg.length) pos=0;
+ window.setTimeout("ScrollTitle()",time_length);
+}
+ScrollTitle();
+</script>
+<script language="JavaScript">
+function scrollit_r2l(seed)
+{
+	var m1  = "Welcome to Sniped's Home Page! ";
+	var m2  = " I type whatever stuff I want. ";
+	var m3  = " If you can read this, you're TOO CLOSE TO THE MONITOR! (or you have zoom in) ";
+		
+	var msg=m1+m2+m3;
+	var out = " ";
+	var c   = 1;
+
+	if (seed > 100) {
+		seed--;
+		var cmd="scrollit_r2l(" + seed + ")";
+		timerTwo=window.setTimeout(cmd,80);
+	}
+	else if (seed <= 100 && seed > 0) {
+		for (c=0 ; c < seed ; c++) {
+			out+=" ";
+		}
+		out+=msg;
+		seed--;
+		var cmd="scrollit_r2l(" + seed + ")";
+		    window.status=out;
+		timerTwo=window.setTimeout(cmd,80);
+	}
+	else if (seed <= 0) {
+		if (-seed < msg.length) {
+			out+=msg.substring(-seed,msg.length);
+			seed--;
+			var cmd="scrollit_r2l(" + seed + ")";
+			window.status=out;
+			timerTwo=window.setTimeout(cmd,80);
+		}
+		else {
+			window.status=" ";
+			timerTwo=window.setTimeout("scrollit_r2l(80)",75);
+		}
+	}
+}
+</script>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta name="title" content="Sniped's Website">
+<meta name="description" content="This is where I host and write stuff.">
+<meta name="keywords" content="sniped,personal,neocities,1990s,geocities,old">
+</head>
+<body>
+
+</body>
+</html>
